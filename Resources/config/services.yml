@@ -1,0 +1,7 @@
+parameters:
+#    bus_map.example.class: Bus\MapBundle\Example
+
+services:
+#    bus_map.example:
+#        class: %bus_map.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

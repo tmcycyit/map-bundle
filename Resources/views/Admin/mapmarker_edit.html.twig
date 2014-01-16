@@ -1,0 +1,52 @@
+{% block mapmarker_widget %}
+    {# check attr array #}
+    {% if attr is not defined %}
+        {% set attr = [] %}
+    {% endif %}
+    {# check zoom #}
+    {% if attr.zoom is not defined %}
+        {% set attr = attr|merge({'zoom': 12}) %}
+    {% endif %}
+    {# check draggable #}
+    {% if attr.draggable is not defined %}
+        {% set attr = attr|merge({'draggable': 'true'}) %}
+    {% endif %}
+    {# check limit #}
+    {% if attr.limit is not defined %}
+        {% set attr = attr|merge({'limit': 1}) %}
+    {% endif %}
+    {# check center latitude #}
+    {% if attr.center_lat is not defined %}
+        {% set attr = attr|merge({'center_lat': 40.177037117759895}) %}
+    {% endif %}
+    {# check center longitude #}
+    {% if attr.center_lng is not defined %}
+        {% set attr = attr|merge({'center_lng': 44.51488494873047}) %}
+    {% endif %}
+
+    <div class="clearfix">
+        <div class="span5">
+
+            <div class="row mapinputs">
+                <span class="span6">
+                    <input type="text" name="{{ full_name }}[lat]" id="{{ id }}[lat]" placeholder="Latitude"  ng-init="markerFor{{ name }}.Lat={{ value[name].lat | default("\'\'") }}" ng-model="markerFor{{ name }}.Lat" required="required" value="{{ value[name].lat | default("\'\'") }}" readonly/>
+                </span>
+                <span class="span6">
+                    <input type="text" name="{{ full_name }}[lng]" id="{{ id }}[lng]" placeholder="Longitude" ng-init="markerFor{{ name }}.Lng={{ value[name].lng | default("\'\'") }}" ng-model="markerFor{{ name }}.Lng" required="required" value="{{ value[name].lng | default("\'\'") }}" readonly/>
+                </span>
+            </div>
+
+            <div class="simple-marker-main-block"
+                    simple-marker
+                    ng-marker="markerFor{{ name }}"
+                    ng-marker-drag="{{ attr['draggable'] }}"
+                    ng-marker-limit="{{ attr['limit'] }}"
+                    ng-center-lat="{{ attr['center_lat'] }}"
+                    ng-center-lng="{{ attr['center_lng'] }}"
+                    ng-zoom="{{ attr['zoom'] }}">
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
