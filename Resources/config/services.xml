@@ -9,7 +9,7 @@
     </parameters>
 
     <services>
-        <service id="bus.form.type.mapmarker" class="%yit_map.form.class%">
+        <service id="bus.form.type.mapmarker" class="Yit\MapBundle\Form\Type\MapMarkerType">
             <tag name="form.type" alias="mapmarker" />
             <argument/>
         </service>
