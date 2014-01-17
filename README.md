@@ -117,11 +117,3 @@ Create example project Bus (src/Bus)
         </call>
    </service>
    ```
-   and:
-
-   ```
-   <service id="bus.form.type.mapmarker" class="Yit\MapBundle\Form\Type\MapMarkerType">
-        <tag name="form.type" alias="mapmarker" />
-        <argument/>
-   </service>
-   ```
