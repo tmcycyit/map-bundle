@@ -4,17 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
     <parameters>
-        <parameter key="bus_map.example.class">Bus\MapBundle\Example</parameter>
+        <parameter key="yit_map.form.class">Yit\MapBundle\Form\Type\MapMarkerType</parameter>
     </parameters>
 
     <services>
-        <service id="bus_map.example" class="%bus_map.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="bus.form.type.mapmarker" class="%yit_map.form.class%">
+            <tag name="form.type" alias="mapmarker" />
+            <argument/>
         </service>
     </services>
-    -->
+
 </container>

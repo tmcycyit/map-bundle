@@ -1,3 +1,0 @@
-bus_map_homepage:Form
-    pattern:  /hello/{name}
-    defaults: { _controller: BusMapBundle:Default:index }

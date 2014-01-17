@@ -1,6 +1,6 @@
 <?php
 
-namespace Bus\MapBundle\Form\Type;
+namespace Yit\MapBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
