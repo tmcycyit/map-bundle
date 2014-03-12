@@ -77,8 +77,8 @@ app.directive('simpleMarker',function($parse,$log,$timeout){
                     marker.setDraggable(true);
                     google.maps.event.addListener(marker,'drag',function(e){
                         scope.$apply(function(){
-                            obj.Lat = e.latLng.d;
-                            obj.Lng = e.latLng.e;
+                            obj.Lat = e.latLng.lat();
+                            obj.Lng = e.latLng.lng();
                         });
                     });
                 }
@@ -92,8 +92,8 @@ app.directive('simpleMarker',function($parse,$log,$timeout){
                     if(!angular.isObject(marker))
                         return;
                     scope.$apply(function(){
-                        marker.Lat = e.latLng.d;
-                        marker.Lng = e.latLng.e;
+                        marker.Lat = e.latLng.lat();
+                        marker.Lng = e.latLng.lng();
                         addMarker(marker,scope);
                     });
                 });
