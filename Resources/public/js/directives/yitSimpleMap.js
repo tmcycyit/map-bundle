@@ -19,6 +19,9 @@ app.directive('simpleMarker',function($parse,$log,$timeout){
     };
     return {
         restrict: 'A',
+        scope: {
+            ngMarker: '='
+        },
         compile: function compile(el,attr){
             var map,zoom,drag,limit,icon;
             var marker = {};
@@ -31,7 +34,7 @@ app.directive('simpleMarker',function($parse,$log,$timeout){
             //attributes must be | 1)zoom(ng-zoom(type=number)),2)drag(ng-marker-drag),3)limit(ng-limit(type=number))
             function initData(a,scope){
                 $timeout(function(){
-                    marker = $parse(a.ngMarker)(scope);
+                    marker = scope.ngMarker;
                     drag = $parse(a.ngMarkerDrag)(scope);
                     zoom = $parse(a.ngZoom)(scope);
                     limit = $parse(a.ngMarkerLimit)(scope);
@@ -44,6 +47,12 @@ app.directive('simpleMarker',function($parse,$log,$timeout){
                     setCenter(center);
                     setZoom(zoom);
                     addMarker(marker,scope);
+                    scope.$watch('ngMarker',function(data){
+                        if (angular.isDefined(marker.Lat) && angular.isDefined(marker.Lng) && marker.Lat!="" && marker.Lng!=""){
+                            marker.Lat = Number(data.Lat);
+                            markers[0].setPosition(new google.maps.LatLng(marker.Lat,marker.Lng));
+                        }
+                    },true)
                 },100);
             }
             /* ---end initData()--- */
@@ -63,7 +72,7 @@ app.directive('simpleMarker',function($parse,$log,$timeout){
                 if(!angular.isDefined(obj.limit))
                     obj.limit = 1;
                 if(markers.length>=obj.limit)
-                    return $log.info("markers` limit is less:limit="+obj.limit);;
+                    return $log.info("markers` limit is less:limit="+obj.limit);
                 if(!angular.isNumber(obj.Lat) || !angular.isNumber(obj.Lng))
                     return;
                 var marker = new google.maps.Marker({
@@ -92,8 +101,10 @@ app.directive('simpleMarker',function($parse,$log,$timeout){
                     if(!angular.isObject(marker))
                         return;
                     scope.$apply(function(){
-                        marker.Lat = e.latLng.lat();
-                        marker.Lng = e.latLng.lng();
+                        if(markers.length<marker.limit) {
+                            marker.Lat = e.latLng.lat();
+                            marker.Lng = e.latLng.lng();
+                        }
                         addMarker(marker,scope);
                     });
                 });
