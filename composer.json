@@ -5,5 +5,8 @@
     "autoload": {
         "psr-0": { "Yit\\MapBundle": "" }
     },
+    "require": {
+        "symfony/symfony": "~2.2"
+    },
     "target-dir": "Yit/MapBundle"
 }
