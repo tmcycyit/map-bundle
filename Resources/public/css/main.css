@@ -9,6 +9,6 @@
     margin-right: 0!important;
 }
 
-.mapinputs input[type="text"]{
-
+.sonata-ba-collapsed-fields > div{
+    clear: both;
 }
