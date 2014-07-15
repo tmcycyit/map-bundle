@@ -1,8 +1,11 @@
+Google map widget for sonata admin.
+
 UPGRADE FROM 1.0
 =======================
 
 Create example project Bus (src/Bus)
 ------------------------------------
+
 
  * In Sonata Admin Class:
    ```
