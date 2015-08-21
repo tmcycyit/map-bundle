@@ -34,16 +34,16 @@
             <div class="row mapinputs">
                 <span class="span6">
                     {% if attr.editable %}
-                        <input type="text" name="{{ full_name }}[lat]" id="{{ id }}[lat]" placeholder="Latitude"  ng-init="markerFor{{ name }}.Lat={{ value[name].lat | default("\'\'") }}" ng-model="markerFor{{ name }}.Lat" required="required" value="{{ value[name].lat | default("\'\'") }}" />
+                        <input type="text" name="{{ full_name }}[{{ name }}][lat]" id="{{ id }}[lat]" placeholder="Latitude"  ng-init="markerFor{{ name }}.Lat={{ value[name].lat | default("\'\'") }}" ng-model="markerFor{{ name }}.Lat" required="required" value="{{ value[name].lat | default("\'\'") }}" />
                     {% else %}
-                        <input type="text" name="{{ full_name }}[lat]" id="{{ id }}[lat]" placeholder="Latitude"  ng-init="markerFor{{ name }}.Lat={{ value[name].lat | default("\'\'") }}" ng-model="markerFor{{ name }}.Lat" required="required" value="{{ value[name].lat | default("\'\'") }}" readonly/>
+                        <input type="text" name="{{ full_name }}[{{ name }}][lat]" id="{{ id }}[lat]" placeholder="Latitude"  ng-init="markerFor{{ name }}.Lat={{ value[name].lat | default("\'\'") }}" ng-model="markerFor{{ name }}.Lat" required="required" value="{{ value[name].lat | default("\'\'") }}" readonly/>
                     {% endif %}
                 </span>
                 <span class="span6">
                     {% if attr.editable %}
-                        <input type="text" name="{{ full_name }}[lng]" id="{{ id }}[lng]" placeholder="Longitude" ng-init="markerFor{{ name }}.Lng={{ value[name].lng | default("\'\'") }}" ng-model="markerFor{{ name }}.Lng" required="required" value="{{ value[name].lng | default("\'\'") }}" />
+                        <input type="text" name="{{ full_name }}[{{ name }}][lng]" id="{{ id }}[lng]" placeholder="Longitude" ng-init="markerFor{{ name }}.Lng={{ value[name].lng | default("\'\'") }}" ng-model="markerFor{{ name }}.Lng" required="required" value="{{ value[name].lng | default("\'\'") }}" />
                     {% else %}
-                        <input type="text" name="{{ full_name }}[lng]" id="{{ id }}[lng]" placeholder="Longitude" ng-init="markerFor{{ name }}.Lng={{ value[name].lng | default("\'\'") }}" ng-model="markerFor{{ name }}.Lng" required="required" value="{{ value[name].lng | default("\'\'") }}" readonly/>
+                        <input type="text" name="{{ full_name }}[{{ name }}][lng]" id="{{ id }}[lng]" placeholder="Longitude" ng-init="markerFor{{ name }}.Lng={{ value[name].lng | default("\'\'") }}" ng-model="markerFor{{ name }}.Lng" required="required" value="{{ value[name].lng | default("\'\'") }}" readonly/>
                     {% endif %}
                 </span>
             </div>
