@@ -12,3 +12,10 @@
 .sonata-ba-collapsed-fields > div{
     clear: both;
 }
+
+#pac-input{
+    top:15px !important;
+    line-height:20px;
+    padding:2px 5px;
+    width: 15%;
+}

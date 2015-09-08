@@ -28,7 +28,11 @@
         {% set attr = attr|merge({'editable': false}) %}
     {% endif %}
 
-    <div class="clearfix" ng-app="AGM">
+    {#{% if value[name] is not defined %}#}
+    {#{% set value = { (name) : {'lat': value.lat,'lng' : value.lng} } %}#}
+    {#{% endif %}#}
+
+    <div class="clearfix" ng-app="AGM" ng-controller="AgmController">
         <div class="span5">
 
             <div class="row mapinputs">
@@ -48,6 +52,7 @@
                 </span>
             </div>
 
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box" ng-keydown="noEnter($event)" >
             <div class="simple-marker-main-block"
                  simple-marker
                  ng-marker="markerFor{{ name }}"
