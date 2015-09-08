@@ -1,6 +1,6 @@
 <?php
 
-namespace Yit\MapBundle\DependencyInjection;
+namespace Tmcycyit\MapBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
