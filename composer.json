@@ -1,12 +1,12 @@
 {
-    "name": "yit/map-bundle",
+    "name": "tmcycyit/map-bundle",
     "type": "symfony-bundle",
-    "license": "YIT",
+    "license": "TMCYCYIT",
     "autoload": {
-        "psr-0": { "Yit\\MapBundle": "" }
+        "psr-0": { "Tmcycyit\\MapBundle": "" }
     },
     "require": {
         "symfony/symfony": "~2.2"
     },
-    "target-dir": "Yit/MapBundle"
+    "target-dir": "Tmcycyit/MapBundle"
 }
