@@ -13,15 +13,15 @@ file that was distributed with this source code.
 
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('/bundles/yitmap/css/main.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('/bundles/tmcycyitmap/css/main.css') }}" type="text/css" rel="stylesheet" />
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('bundles/yitmap/js/angular.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/tmcycyitmap/js/angular.min.js') }}" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script src="{{ asset('bundles/yitmap/js/app.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('bundles/yitmap/js/controllers/AgmController.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('bundles/yitmap/js/directives/agm.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('bundles/yitmap/js/directives/yitSimpleMap.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/tmcycyitmap/js/app.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/tmcycyitmap/js/controllers/AgmController.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/tmcycyitmap/js/directives/agm.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/tmcycyitmap/js/directives/yitSimpleMap.js') }}" type="text/javascript"></script>
 {% endblock %}
