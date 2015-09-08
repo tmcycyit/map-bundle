@@ -5,11 +5,11 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="yit_map.form.class">Yit\MapBundle\Form\Type\MapMarkerType</parameter>
+        <parameter key="yit_map.form.class">Tmcycyit\MapBundle\Form\Type\MapMarkerType</parameter>
     </parameters>
 
     <services>
-        <service id="bus.form.type.mapmarker" class="Yit\MapBundle\Form\Type\MapMarkerType">
+        <service id="bus.form.type.mapmarker" class="Tmcycyit\MapBundle\Form\Type\MapMarkerType">
             <tag name="form.type" alias="mapmarker" />
             <argument/>
         </service>
