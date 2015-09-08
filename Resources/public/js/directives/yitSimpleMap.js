@@ -97,6 +97,9 @@ app.directive('simpleMarker',function($parse,$log,$timeout){
 
             return function(scope,el,attr){
                 initData(attr,scope);
+                var input = document.getElementById('pac-input');
+                var searchBox = new google.maps.places.SearchBox(input);
+                map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
                 google.maps.event.addListener(map,'click',function(e){
                     if(!angular.isObject(marker))
                         return;
