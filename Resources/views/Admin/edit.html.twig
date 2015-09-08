@@ -19,7 +19,7 @@ file that was distributed with this source code.
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('bundles/tmcycyitmap/js/angular.min.js') }}" type="text/javascript"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
     <script src="{{ asset('bundles/tmcycyitmap/js/app.js') }}" type="text/javascript"></script>
     <script src="{{ asset('bundles/tmcycyitmap/js/controllers/AgmController.js') }}" type="text/javascript"></script>
     <script src="{{ asset('bundles/tmcycyitmap/js/directives/agm.js') }}" type="text/javascript"></script>
